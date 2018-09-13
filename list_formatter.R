@@ -3,7 +3,7 @@
 write_new_csv <- function(x){
   
   file_name <- paste(filename, ' - ', i,'.csv', sep = '')
-  write.csv(temp_df, file = file_name, row.names = FALSE, quote = FALSE)
+  write.csv(temp_df, file = file_name, row.names = FALSE, quote = FALSE, na = '')
 }
 
 #choose list
