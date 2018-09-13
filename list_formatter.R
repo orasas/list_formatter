@@ -12,6 +12,11 @@ voter_file<- read.csv(filename<-file.choose(), stringsAsFactors = FALSE)
 head(voter_file, n =2)
 filename<- sub(pattern = "(.*)\\..*$", replacement = "\\1", basename(filename))
 
+#remove columns
+#to_remove <- c(2,3)
+#voter_file <- voter_file[,-to_remove]
+#head(voter_file, n =2)
+
 #break into n 500k row sections
 n <- ceiling(nrow(voter_file)/ 500000)
 N<- c(0:(n-1))
