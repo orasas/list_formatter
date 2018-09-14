@@ -8,24 +8,24 @@ write_new_csv <- function(x){
 
 #choose list
 
-voter_file<- read.csv(filename<-file.choose(), stringsAsFactors = FALSE)
-head(voter_file, n =2)
+file<- read.csv(filename<-file.choose(), stringsAsFactors = FALSE)
+head(file, n =2)
 filename<- sub(pattern = "(.*)\\..*$", replacement = "\\1", basename(filename))
 
 #remove columns
 #to_remove <- c(2,3)
-#voter_file <- voter_file[,-to_remove]
-#head(voter_file, n =2)
+#voter_file <- file[,-to_remove]
+#head(file, n =2)
 
 #break into n 500k row sections
-n <- ceiling(nrow(voter_file)/ 500000)
+n <- ceiling(nrow(file)/ 500000)
 N<- c(0:(n-1))
 i<-0
 
 #run over file every 500k rows
 for(i in N) {
   keep_rows <- c((i*500000):(i*500000 + 500000))
-  temp_df <- voter_file[keep_rows,]
+  temp_df <- file[keep_rows,]
   write_new_csv(temp_df)
 }
 
