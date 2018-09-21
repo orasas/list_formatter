@@ -12,6 +12,8 @@ file<- read.csv(filename<-file.choose(), stringsAsFactors = FALSE)
 head(file, n =2)
 filename<- sub(pattern = "(.*)\\..*$", replacement = "\\1", basename(filename))
 
+#head to platform specific list formats if necessary
+
 #remove columns
 #to_remove <- c(2,3)
 #voter_file <- file[,-to_remove]
