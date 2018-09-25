@@ -17,7 +17,7 @@ N<- c(0:(n-1))
 i<-0
 
 #file name
-filename <- 'lean_yes'
+#filename <- 'lean_yes'
 
 #run over file every 500k rows
 for(i in N) {
