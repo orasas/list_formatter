@@ -1,6 +1,14 @@
 #AdWords
 #remove colummns to match only address fields
 
+#worth adding to differentiate platforms?
+write_new_csv <- function(x){
+  
+  file_name <- paste(filename, ' - ', 'AdWords', ' - ', i,'.csv', sep = '')
+  write.csv(temp_df, file = file_name, row.names = FALSE, quote = FALSE, na = '')
+}
+
+##START
 #start here after selcting file and file name
 library(tidyverse)
 
