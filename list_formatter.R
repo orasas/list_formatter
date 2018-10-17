@@ -10,7 +10,8 @@ write_new_csv <- function(x){
 
 file<- read.csv(filename<-file.choose(), stringsAsFactors = FALSE, encoding = 'UTF-8', quote = "")
 head(file, n =2)
-filename<- sub(pattern = "(.*)\\..*$", replacement = "\\1", basename(filename))
+
+filename<- gsub(pattern = "\\s", replacement = "\\1", basename(filename))
 nrow(file)
 
 #head to platform specific list formats if necessary

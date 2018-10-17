@@ -1,6 +1,13 @@
 #simpli.fi
 #remove colummns to match only address fields
 
+write_new_csv <- function(x){
+  
+  file_name <- paste(filename, ' - ', 'simplifi', ' - ', i,'.csv', sep = '')
+  write.csv(temp_df, file = file_name, row.names = FALSE, quote = FALSE, na = '')
+}
+
+
 #start here after selcting file and file name
 library(tidyverse)
 
