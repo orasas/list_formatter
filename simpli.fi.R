@@ -12,11 +12,11 @@ write_new_csv <- function(x){
 library(tidyverse)
 
 colnames(file)
-keep_cols <- (colnames(file) %in% c('RDIR', 'RSTREET', 'RTYPE', 'RCITY', 'RZIP'))
+keep_cols <- (colnames(file) %in% c('RDIR', 'RCITY', 'RSTATE', 'RZIP'))
 file_simplifi <- file[keep_cols]
-head(file_simplifi)
+head(file_simplifi, n = 10)
 
-names(file_simplifi) <- c('Address',	'Street',	'Type',	'City',	'Zip Code')
+names(file_simplifi) <- c('Address', 'City', 'State',	'Zip Code')
 head(file_simplifi)
 
 #back to writing csv as normal
