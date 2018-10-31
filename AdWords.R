@@ -2,7 +2,7 @@
 #remove colummns to match only address fields
 
 #worth adding to differentiate platforms?
-write_new_csv <- function(x){
+write_new_csv_ads <- function(x){
   
   file_name <- paste(filename, ' - ', 'AdWords', ' - ', i,'.csv', sep = '')
   write.csv(temp_df, file = file_name, row.names = FALSE, quote = FALSE, na = '')
@@ -36,6 +36,6 @@ i<-0
 for(i in N) {
   keep_rows <- c((i*500000):(i*500000 + 500000))
   temp_df <- file_ads[keep_rows,]
-  write_new_csv(temp_df)
+  write_new_csv_ads(temp_df)
 }
 

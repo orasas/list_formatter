@@ -1,5 +1,10 @@
 #LiveRamp
 #remove colummns to match only address fields
+write_new_csv_LR <- function(x){
+  
+  file_name <- paste(filename, ' - LR - ', i,'.csv', sep = '')
+  write.csv(temp_df, file = file_name, row.names = FALSE, quote = FALSE, na = '')
+}
 
 #start here after selcting file and file name
 library(tidyverse)
@@ -23,6 +28,6 @@ i<-0
 for(i in N) {
   keep_rows <- c((i*500000):(i*500000 + 500000))
   temp_df <- file_liveramp[keep_rows,]
-  write_new_csv(temp_df)
+  write_new_csv_LR(temp_df)
 }
 
