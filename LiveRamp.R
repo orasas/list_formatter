@@ -2,7 +2,7 @@
 #remove colummns to match only address fields
 write_new_csv_LR <- function(x){
   
-  file_name <- paste(filename, '-LR -', i,'.csv', sep = '')
+  file_name <- paste(filename, '-LR-', i,'.csv', sep = '')
   write.csv(temp_df, file = file_name, row.names = FALSE, quote = FALSE, na = '')
 }
 
@@ -16,10 +16,9 @@ names(file_liveramp) <- c('Client Customer ID',	'First Name',	'Last Name',	'Stre
 head(file_liveramp)
 
 #back to writing csv as normal
-#break into n parts
-#set x to number of rows
-
+#enter number of lines to break on x
 x <- 500000
+#break into n parts
 n <- ceiling(nrow(file_liveramp)/ x)
 N<- c(0:(n-1))
 i<-0

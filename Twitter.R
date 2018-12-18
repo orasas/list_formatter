@@ -19,10 +19,9 @@ names(file_tw) <- c('Phone',	'Email')
 head(file_tw, n=20)
 
 #back to writing csv as normal
-#break into n parts
-#set x to number of rows
-
+#enter number of lines to break on x
 x <- 500000
+#break into n parts
 n <- ceiling(nrow(file_tw)/ x)
 N<- c(0:(n-1))
 i<-0

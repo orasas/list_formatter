@@ -1,7 +1,7 @@
 #simpli.fi
 #remove colummns to match only address fields
 
-write_new_csv_simpli <- function(x){
+write_new_csv <- function(x){
   
   file_name <- paste(filename, '-', 'simplifi', '-', i,'.csv', sep = '')
   write.csv(temp_df, file = file_name, row.names = FALSE, quote = FALSE, na = '')
@@ -20,10 +20,9 @@ names(file_simplifi) <- c('Address', 'City', 'State',	'Zip Code')
 head(file_simplifi)
 
 #back to writing csv as normal
-#break into n parts
-#set x to number of rows
-
+#enter number of lines to break on x
 x <- 500000
+#break into n parts
 n <- ceiling(nrow(file_simplifi)/ x)
 N<- c(0:(n-1))
 i<-0
@@ -32,5 +31,5 @@ i<-0
 for(i in N) {
   keep_rows <- c((i*x):(i*x + x))
   temp_df <- file_simplifi[keep_rows,]
-  write_new_csv_simpli(temp_df)
+  write_new_csv(temp_df)
 }
