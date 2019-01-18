@@ -25,8 +25,8 @@ nrow(file)
 x <- 500000
 #break into n 500k row sections
 n <- ceiling(nrow(file)/ x)
-N<- c(0:(n-1))
-i<-0
+N <- c(0:(n-1))
+i <- 0
 
 #run over file every 500k rows
 for(i in N) {

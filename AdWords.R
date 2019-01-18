@@ -8,6 +8,7 @@ write_new_csv_ads <- function(x){
   write.csv(temp_df, file = file_name, row.names = FALSE, quote = FALSE, na = '')
 }
 
+########################
 ##START
 #start here after selcting file and file name
 library(tidyverse)
@@ -18,9 +19,13 @@ colnames(file)
 keep_cols <- (colnames(file) %in% c('FNAME', 'LNAME', 'RCOUNTRY', 'RZIP', 'PHONE', 'WPHONE', 'EMAIL'))
 file_ads <- file[keep_cols]
 
-names(file_ads) <- c('First Name',	'Last Name',	'Zip',	'Phone', 'Phone',	'Email')
+names(file_ads) <- c('First Name',	'Last Name',	'Zip',	'Phone', 'Phone2',	'Email')
 
-cbind(file_ads, Country)
+file_ads <- cbind(file_ads, Country)
+head(file_ads)
+
+file_ads <- file_ads %>% mutate(Phone = coalesce(Phone, Phone2)) %>%
+  select(`First Name`, `Last Name`, Zip, Phone, Email, Country)
 head(file_ads)
 
 #back to writing csv as normal
@@ -32,7 +37,7 @@ N<- c(0:(n-1))
 i<-0
 
 #file name
-#filename <- 'lean_yes'
+#filename <- ''
 
 #run over file every 500k rows
 for(i in N) {
