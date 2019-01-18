@@ -8,7 +8,10 @@ write_new_csv_ads <- function(x){
   write.csv(temp_df, file = file_name, row.names = FALSE, quote = FALSE, na = '')
 }
 
+<<<<<<< HEAD
 ########################
+=======
+>>>>>>> 014a690176486e52ff1c80753abe022d795fb204
 ##START
 #start here after selcting file and file name
 library(tidyverse)
@@ -24,10 +27,13 @@ names(file_ads) <- c('First Name',	'Last Name',	'Zip',	'Phone', 'Phone2',	'Email
 file_ads <- cbind(file_ads, Country)
 head(file_ads)
 
+<<<<<<< HEAD
 file_ads <- file_ads %>% mutate(Phone = coalesce(Phone, Phone2)) %>%
   select(`First Name`, `Last Name`, Zip, Phone, Email, Country)
 head(file_ads)
 
+=======
+>>>>>>> 014a690176486e52ff1c80753abe022d795fb204
 #back to writing csv as normal
 #enter number of lines to break on x
 x <- 500000
@@ -37,7 +43,11 @@ N<- c(0:(n-1))
 i<-0
 
 #file name
+<<<<<<< HEAD
 #filename <- ''
+=======
+#filename <- 'lean_yes'
+>>>>>>> 014a690176486e52ff1c80753abe022d795fb204
 
 #run over file every 500k rows
 for(i in N) {
